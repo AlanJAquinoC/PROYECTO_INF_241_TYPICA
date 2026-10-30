@@ -762,8 +762,8 @@ body {
 /* ==================== TEAM ==================== */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
 }
 .team-card {
   background: rgba(245,240,232,0.06);
@@ -845,15 +845,41 @@ body {
 .footer__info strong { color: rgba(245,240,232,0.65); }
 
 .hero__meta-item--team {
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: flex-start;
-  padding-top: 0.5rem;
-  margin-top: 0.25rem;
+  gap: 0.35rem;
+  padding-top: 0.6rem;
+  margin-top: 0.35rem;
   border-top: 1px solid var(--cream-dark);
 }
-.hero__meta-item--team span {
-  line-height: 1.6;
+.hero__meta-item--team strong {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--espresso);
   font-size: 0.82rem;
+}
+.hero__team-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+.hero__team-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  background: rgba(196, 149, 106, 0.15);
+  border: 1px solid rgba(196, 149, 106, 0.35);
+  border-radius: 14px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--espresso);
+  transition: background var(--transition), border-color var(--transition);
+}
+.hero__team-chip:hover {
+  background: rgba(184, 146, 42, 0.2);
+  border-color: var(--gold);
 }
 
 /* ==================== DIAGRAM TABS ==================== */
@@ -944,7 +970,7 @@ body {
   .hero__img-overlay { background: linear-gradient(to bottom, transparent 60%, var(--cream) 100%); }
   .hero__content { padding: 4rem 2rem 3rem; }
   .problems-grid { grid-template-columns: 1fr 1fr; }
-  .team-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
   .diagrams-grid { grid-template-columns: 1fr; }
 }
 

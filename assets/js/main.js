@@ -48,3 +48,22 @@ sections.forEach(s => navObs.observe(s));
 const style = document.createElement('style');
 style.textContent = `.topbar__nav a.active { color: var(--gold-light) !important; }`;
 document.head.appendChild(style);
+
+// DFD Tab switcher
+const dfdTabs = document.getElementById('dfd-tabs');
+if (dfdTabs) {
+  dfdTabs.addEventListener('click', (e) => {
+    const btn = e.target.closest('.diag-tab');
+    if (!btn) return;
+    const target = btn.dataset.target;
+
+    // Deactivate all
+    dfdTabs.querySelectorAll('.diag-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.diag-panel').forEach(p => p.classList.remove('active'));
+
+    // Activate clicked
+    btn.classList.add('active');
+    const panel = document.getElementById(target);
+    if (panel) panel.classList.add('active');
+  });
+}
