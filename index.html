@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typica Café — Sistema ADOO | UMSA 2026</title>
+  <meta name="description" content="Análisis y Diseño de un Sistema de Gestión de Comandas, Estaciones de Producción y Control de Insumos para Typica Café — UMSA Informática ADOO 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ===== TOPBAR ===== -->
+  <header class="topbar">
+    <a href="#inicio" class="topbar__brand">
+      <img src="assets/images/typica_logo.jpg" alt="Typica Café" />
+      <span>Typica Café &mdash; ADOO</span>
+    </a>
+
+    <nav aria-label="Navegación principal">
+      <ul class="topbar__nav">
+        <li><a href="#introduccion">Intro</a></li>
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#objetivos">Objetivos</a></li>
+        <li><a href="#diagramas">DFD</a></li>
+        <li><a href="#uml">UML</a></li>
+        <li><a href="#planificacion">Gantt</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+      </ul>
+    </nav>
+
+    <a href="assets/Proyecto_ADOO_Typica_Cafe_Parte_1_v2.pdf" download class="btn-download">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Descargar Informe
+    </a>
+  </header>
+
+
+  <!-- ===== HERO ===== -->
+  <section id="inicio" class="hero">
+    <div class="hero__visual">
+      <div class="hero__visual-grid">
+        <img src="assets/images/tyipica_1.jpeg" alt="Interior Typica Café" class="hero__img" loading="eager" />
+        <img src="assets/images/typica_3.jpg" alt="Café de especialidad" class="hero__img" loading="eager" />
+      </div>
+      <div class="hero__img-overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">UMSA · Informática · ADOO 2026</p>
+
+      <h1 class="hero__title">
+        Sistema de Gestión para<br/>
+        <em>Typica Café</em>
+      </h1>
+
+      <p class="hero__subtitle">
+        Análisis y diseño de un sistema integral de <strong>gestión de comandas</strong>,
+        estaciones de producción y control de insumos para la operativa de Typica Café
+        en la ciudad de La Paz.
+      </p>
+
+      <div class="hero__meta">
+        <div class="hero__meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span><strong>Materia:</strong> Análisis y Diseño de Sistemas (ADOO)</span>
+        </div>
+        <div class="hero__meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span><strong>Facultad:</strong> Ciencias Puras y Naturales — Carrera de Informática</span>
+        </div>
+        <div class="hero__meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span><strong>Gestión:</strong> 2026 · La Paz, Bolivia</span>
+        </div>
+        <div class="hero__meta-item hero__meta-item--team">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span><strong>Equipo:</strong> Bryan O. Apaza Pacheco &nbsp;·&nbsp; Alan Aquino &nbsp;·&nbsp; <em style="color:var(--text-muted);font-style:normal;">Int. 3 (por confirmar)</em> &nbsp;·&nbsp; <em style="color:var(--text-muted);font-style:normal;">Int. 4 (por confirmar)</em></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Explorar</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+    </div>
+  </section>
+
+
+  <!-- ===== INSTITUCIONES ===== -->
+  <div class="section section--cream-dark" style="padding:2rem 0;">
+    <div class="container">
+      <div class="institutions">
+        <div class="institution">
+          <img src="assets/images/logo_umsa.svg" alt="UMSA" />
+          <span class="institution__name">Universidad Mayor<br/>de San Andrés</span>
+        </div>
+        <div class="institution__divider"></div>
+        <div class="institution">
+          <img src="assets/images/logo_informatica.png" alt="Carrera de Informática" />
+          <span class="institution__name">Carrera de<br/>Informática</span>
+        </div>
+        <div class="institution__divider"></div>
+        <div class="institution">
+          <img src="assets/images/typica_logo.jpg" alt="Typica Café" style="border-radius:8px;" />
+          <span class="institution__name">Typica Café<br/>La Paz</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ===== INTRODUCCIÓN ===== -->
+  <section id="introduccion" class="section">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <div class="section__header">
+            <p class="section__label">01 · Introducción</p>
+            <h2 class="section__title">Una cafetería de especialidad que necesita evolucionar digitalmente</h2>
+          </div>
+          <p class="reveal">
+            El presente proyecto se enfoca en el análisis y diseño de un sistema informático
+            especializado para <strong>Typica Café</strong>, una reconocida cadena de cafeterías
+            de especialidad y tostaduría en la ciudad de La Paz. Typica Café se distingue por
+            revalorizar casonas patrimoniales y brindar una experiencia gastronómica centrada
+            en el café de altura boliviano y la repostería artesanal.
+          </p>
+          <p class="reveal reveal-delay-1">
+            Dada la alta demanda y la complejidad operativa del servicio en salón y barra,
+            resulta indispensable contar con un sistema integral de gestión de comandas,
+            derivación automatizada a estaciones de producción (barra de especialidad y cocina)
+            y control en tiempo real de insumos perecederos.
+          </p>
+          <p class="reveal reveal-delay-2">
+            Este estudio aborda el desarrollo de la solución bajo el paradigma del
+            <strong>Análisis Estructurado</strong> y el <strong>Análisis y Diseño Orientado
+            a Objetos (UML)</strong>, asegurando una propuesta técnica rigurosa y escalable.
+          </p>
+        </div>
+
+        <div class="intro-photo reveal">
+          <img src="assets/images/typica_4.jpeg" alt="Typica Café — ambiente" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== ANTECEDENTES ===== -->
+  <section class="section section--cream-dark">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">02 · Antecedentes</p>
+        <h2 class="section__title">Contexto operativo de Typica Café</h2>
+        <p class="section__desc">
+          Typica Café cuenta con una sólida presencia en La Paz a través de sus sucursales
+          en Sopocachi, el Centro Histórico, San Jorge y la Zona Sur.
+        </p>
+      </div>
+
+      <div class="scope-grid">
+        <div class="scope-card reveal">
+          <span class="scope-card__tag">Operativa</span>
+          <h3>Flujo de Órdenes</h3>
+          <p>La atención a los comensales involucra un flujo constante de órdenes que deben ser
+          tomadas en mesa, clasificadas y transmitidas a las diferentes áreas de elaboración
+          de forma inmediata.</p>
+        </div>
+        <div class="scope-card reveal reveal-delay-1">
+          <span class="scope-card__tag">Brecha Actual</span>
+          <h3>Cuello de Botella</h3>
+          <p>La sincronización entre personal de salón (meseros), baristas, cocineros y
+          encargado de almacén presenta cuellos de botella por la falta de un flujo
+          digitalizado de comandas.</p>
+        </div>
+        <div class="scope-card reveal reveal-delay-2">
+          <span class="scope-card__tag">Impacto</span>
+          <h3>Descontrol de Insumos</h3>
+          <p>La transmisión manual de pedidos genera extravíos de tickets, demoras en las
+          estaciones de preparación y descuadres en el inventario de insumos clave —
+          granos de café, leches y repostería.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== PLANTEAMIENTO DEL PROBLEMA ===== -->
+  <section id="problema" class="section section--dark">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">03 · Planteamiento</p>
+        <h2 class="section__title">El problema central</h2>
+        <p class="section__desc">
+          Se identifican tres falencias principales en la operativa diaria de Typica Café
+          que afectan la eficiencia del servicio.
+        </p>
+      </div>
+
+      <div class="problems-grid">
+        <div class="problem-card reveal">
+          <span class="problem-card__num">01</span>
+          <div class="problem-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Desincronización en la Gestión de Comandas</h3>
+          <p>Extravío o retraso en el envío de comandas desde las mesas hacia las áreas de
+          preparación, causando confusión en el orden de llegada de las órdenes.</p>
+        </div>
+
+        <div class="problem-card reveal reveal-delay-1">
+          <span class="problem-card__num">02</span>
+          <div class="problem-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          <h3>Falta de Derivación Automatizada</h3>
+          <p>Inexistencia de un canal digital estructurado que enrute automáticamente los
+          ítems de bebidas a la barra de baristas y los de comida/repostería a la cocina.</p>
+        </div>
+
+        <div class="problem-card reveal reveal-delay-2">
+          <span class="problem-card__num">03</span>
+          <div class="problem-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Descontrol en el Consumo de Insumos</h3>
+          <p>Ausencia de una deducción automatizada de materia prima en almacén según las
+          preparaciones despachadas, imposibilitando el seguimiento del stock en tiempo real.</p>
+        </div>
+      </div>
+
+      <!-- Árbol de problemas -->
+      <div style="margin-top:4rem;">
+        <div class="section__header reveal">
+          <p class="section__label">Árbol de Problemas</p>
+          <h2 class="section__title" style="font-size:1.5rem;">Estructura causal del problema central</h2>
+        </div>
+
+        <div class="tree-container reveal">
+          <!-- Efectos -->
+          <div class="tree-row">
+            <div class="tree-node tree-node--effect">Demoras en entrega de pedidos y descontento en comensales</div>
+            <div class="tree-node tree-node--effect">Tiempos muertos y cuellos de botella en barra y cocina</div>
+            <div class="tree-node tree-node--effect">Mermas no contabilizadas y desfases de stock</div>
+          </div>
+
+          <div class="tree-connector">
+            <div class="tree-connector-line"></div>
+            <div class="tree-connector-line"></div>
+            <div class="tree-connector-line"></div>
+          </div>
+
+          <!-- Problema central -->
+          <div class="tree-row">
+            <div class="tree-node tree-node--center">
+              Ineficiencia en el flujo de gestión de comandas, coordinación con estaciones de producción y control de insumos en Typica Café (La Paz)
+            </div>
+          </div>
+
+          <div class="tree-connector" style="justify-content:center;">
+            <div class="tree-connector-line"></div>
+          </div>
+
+          <!-- Causas -->
+          <div class="tree-row">
+            <div class="tree-node tree-node--cause">Comunicación manual entre meseros y cocina/barra</div>
+            <div class="tree-node tree-node--cause">Sin sistema de enrutamiento de pedidos por tipo</div>
+            <div class="tree-node tree-node--cause">Registro de insumos manual e irregular</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulación -->
+      <div style="margin-top:3.5rem; padding:2.5rem; background:rgba(184,146,42,0.1); border:1px solid rgba(184,146,42,0.3); border-radius:16px;" class="reveal">
+        <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:0.75rem;">Formulación del Problema</p>
+        <p style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--cream);line-height:1.7;font-style:italic;">
+          "¿De qué manera el análisis y diseño estructurado y orientado a objetos de un
+          Sistema de Gestión de Comandas, Estaciones de Producción y Control de Insumos
+          puede optimizar el flujo de trabajo operativo, la coordinación entre áreas y el
+          seguimiento de stock en Typica Café en la ciudad de La Paz?"
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== OBJETIVOS ===== -->
+  <section id="objetivos" class="section">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">04 · Objetivos</p>
+        <h2 class="section__title">Propósito del estudio</h2>
+      </div>
+
+      <div class="obj-main reveal">
+        <h3>Objetivo General</h3>
+        <p>
+          Analizar y diseñar un sistema informático de Gestión de Comandas, Estaciones de
+          Producción y Control de Insumos para optimizar el ciclo de atención, la
+          preparación de pedidos y el control de stock en Typica Café (La Paz), aplicando
+          formalmente los paradigmas del <strong>Análisis Estructurado</strong> y el
+          <strong>Análisis y Diseño Orientado a Objetos (UML)</strong>.
+        </p>
+      </div>
+
+      <ul class="obj-list">
+        <li class="reveal">
+          <span class="obj-num">1</span>
+          <div class="obj-text">
+            <strong>Levantamiento de Requerimientos</strong>
+            <span>Levantar y priorizar los requerimientos funcionales para la toma de
+            comandas, derivación a pantallas de producción (barra/cocina) y administración
+            de insumos.</span>
+          </div>
+        </li>
+        <li class="reveal reveal-delay-1">
+          <span class="obj-num">2</span>
+          <div class="obj-text">
+            <strong>Modelado Estructurado</strong>
+            <span>Desarrollar la arquitectura lógica estructurada mediante Diagramas de
+            Flujo de Datos (DFD) y el Diccionario de Datos para el flujo de comandas e
+            insumos.</span>
+          </div>
+        </li>
+        <li class="reveal reveal-delay-2">
+          <span class="obj-num">3</span>
+          <div class="obj-text">
+            <strong>Modelado Orientado a Objetos</strong>
+            <span>Diseñar la solución mediante diagramas UML (Casos de Uso, Clases,
+            Secuencia y Actividades) representando la interacción entre mesa, cocina,
+            barra y almacén.</span>
+          </div>
+        </li>
+        <li class="reveal reveal-delay-3">
+          <span class="obj-num">4</span>
+          <div class="obj-text">
+            <strong>Diseño de Arquitectura e Interfaz</strong>
+            <span>Modelar el esquema de base de datos relacional y los prototipos de
+            interfaz para el registro de comandas y monitores de las estaciones de
+            producción.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ===== ALCANCE Y JUSTIFICACIÓN ===== -->
+  <section class="section section--cream-dark">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">05 · Alcance y Justificación</p>
+        <h2 class="section__title">Delimitación del proyecto</h2>
+      </div>
+
+      <div class="scope-grid">
+        <div class="scope-card reveal">
+          <span class="scope-card__tag">Geográfica</span>
+          <h3>Sede de Aplicación</h3>
+          <p>Aplica exclusivamente a la gestión operativa de <strong>Typica Café</strong>
+          en la ciudad de <strong>La Paz, Bolivia</strong> — Gestión 2026.</p>
+        </div>
+
+        <div class="scope-card reveal reveal-delay-1">
+          <span class="scope-card__tag">Funcional</span>
+          <h3>Módulos del Sistema</h3>
+          <p>
+            <strong>Módulo de Gestión de Comandas</strong> (toma y despacho) ·
+            <strong>Módulo de Estaciones de Producción</strong> (Barra y Cocina) ·
+            <strong>Módulo de Control de Insumos e Inventarios</strong>.
+          </p>
+        </div>
+
+        <div class="scope-card reveal reveal-delay-2">
+          <span class="scope-card__tag">Justificación</span>
+          <h3>Necesidad Técnica</h3>
+          <p>La automatización del envío de comandas agiliza los tiempos de preparación,
+          reduce errores en pedidos y previene desabastecimientos y mermas sin registrar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== METODOLOGÍA ===== -->
+  <section class="section section--brown">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">06 · Metodología</p>
+        <h2 class="section__title">Método, medios e instrumentos</h2>
+      </div>
+
+      <div class="method-grid">
+        <div class="method-block reveal">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Método de Investigación
+          </h3>
+          <p>Investigación <strong>aplicada de carácter descriptivo e instrumental</strong>
+          apoyada en fundamentos de ingeniería de software. El desarrollo sigue el ciclo
+          de vida de análisis estructurado y orientado a objetos.</p>
+        </div>
+
+        <div class="method-block reveal reveal-delay-1">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Instrumentos Utilizados
+          </h3>
+          <ul>
+            <li>Entrevistas semiestructuradas al personal de Typica Café</li>
+            <li>Observación directa de la dinámica en salón y barra</li>
+            <li>Herramientas CASE para modelado estructurado</li>
+            <li>Herramientas UML para análisis orientado a objetos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== DIAGRAMAS DFD ===== -->
+  <section id="diagramas" class="section section--dark">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">07 · Análisis Estructurado</p>
+        <h2 class="section__title">Diagramas de Flujo de Datos (DFD)</h2>
+        <p class="section__desc">
+          Modelado estructurado del flujo de comandas, derivación a estaciones de producción
+          y control de insumos. Usa las pestañas para navegar entre niveles.
+        </p>
+      </div>
+
+      <!-- DFD TABS -->
+      <div class="reveal">
+        <div class="diag-tabs" id="dfd-tabs">
+          <button class="diag-tab active" data-target="dfd-0">Modelo Ambiental</button>
+          <button class="diag-tab" data-target="dfd-1">DFD Nivel 0</button>
+          <button class="diag-tab" data-target="dfd-2">N1 — Registrar Comanda</button>
+          <button class="diag-tab" data-target="dfd-3">N1 — Derivar Estaciones</button>
+          <button class="diag-tab" data-target="dfd-4">N1 — Preparar y Despachar</button>
+          <button class="diag-tab" data-target="dfd-5">N1 — Controlar Insumos</button>
+        </div>
+
+        <div class="diag-panel active" id="dfd-0">
+          <div class="diag-iframe-wrap">
+            <iframe src="assets/diagramas/1_Modelo_ambiental.drawio.html" title="Modelo Ambiental — Diagrama de Contexto" loading="lazy"></iframe>
+            <div class="diag-caption"><strong>DFD — Modelo Ambiental (Diagrama de Contexto):</strong> Actores externos e interacciones con el sistema.</div>
+          </div>
+        </div>
+        <div class="diag-panel" id="dfd-1">
+          <div class="diag-iframe-wrap">
+            <iframe src="assets/diagramas/2_DFD_Nivel_0 (2).drawio.html" title="DFD Nivel 0" loading="lazy"></iframe>
+            <div class="diag-caption"><strong>DFD Nivel 0:</strong> Procesos principales del sistema y flujos de datos entre ellos.</div>
+          </div>
+        </div>
+        <div class="diag-panel" id="dfd-2">
+          <div class="diag-iframe-wrap">
+            <iframe src="assets/diagramas/3_Nivel1_Registrar_comanda .drawio.html" title="Nivel 1 — Registrar Comanda" loading="lazy"></iframe>
+            <div class="diag-caption"><strong>DFD Nivel 1 — Registrar Comanda:</strong> Detalle del proceso de toma y registro de pedidos.</div>
+          </div>
+        </div>
+        <div class="diag-panel" id="dfd-3">
+          <div class="diag-iframe-wrap">
+            <iframe src="assets/diagramas/4_Nivel1_Derivar_estaciones.drawio.html" title="Nivel 1 — Derivar Estaciones" loading="lazy"></iframe>
+            <div class="diag-caption"><strong>DFD Nivel 1 — Derivar Estaciones:</strong> Enrutamiento automático de ítems a Barra o Cocina.</div>
+          </div>
+        </div>
+        <div class="diag-panel" id="dfd-4">
+          <div class="diag-iframe-wrap">
+            <iframe src="assets/diagramas/5_Nivel1_Preparar_despachar.drawio.html" title="Nivel 1 — Preparar y Despachar" loading="lazy"></iframe>
+            <div class="diag-caption"><strong>DFD Nivel 1 — Preparar y Despachar:</strong> Flujo de preparación en estaciones y despacho al mesero.</div>
+          </div>
+        </div>
+        <div class="diag-panel" id="dfd-5">
+          <div class="diag-iframe-wrap">
+            <iframe src="assets/diagramas/6_Nivel1_Controlar_insumos.drawio.html" title="Nivel 1 — Controlar Insumos" loading="lazy"></iframe>
+            <div class="diag-caption"><strong>DFD Nivel 1 — Controlar Insumos:</strong> Deducción de stock, alertas y gestión de inventario.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulos del sistema -->
+      <div style="margin-top:4rem;">
+        <div class="section__header reveal">
+          <p class="section__label">Módulos Diseñados</p>
+          <h2 class="section__title" style="font-size:1.4rem;">Arquitectura funcional del sistema</h2>
+        </div>
+        <div class="problems-grid" style="grid-template-columns:repeat(3,1fr);">
+          <div class="problem-card reveal">
+            <div class="problem-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+            </div>
+            <h3>Módulo de Gestión de Comandas</h3>
+            <p>Toma y despacho de pedidos desde mesa hacia las estaciones de producción con registro digital en tiempo real.</p>
+          </div>
+          <div class="problem-card reveal reveal-delay-1">
+            <div class="problem-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Módulo de Estaciones de Producción</h3>
+            <p>Pantallas digitales independientes para la Barra de Baristas y la Cocina, con colas de pedidos ordenadas por prioridad.</p>
+          </div>
+          <div class="problem-card reveal reveal-delay-2">
+            <div class="problem-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </div>
+            <h3>Módulo de Control de Insumos</h3>
+            <p>Deducción automatizada de materia prima en almacén según las preparaciones despachadas, con alertas de stock mínimo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIAGRAMAS UML ===== -->
+  <section id="uml" class="section section--brown">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">08 · Análisis Orientado a Objetos</p>
+        <h2 class="section__title">Diagramas UML</h2>
+        <p class="section__desc">
+          Modelado orientado a objetos del sistema: Casos de Uso, Clases, Secuencia y
+          Actividades representando la interacción entre mesa, cocina, barra y almacén.
+        </p>
+      </div>
+
+      <div class="reveal">
+        <div class="diag-iframe-wrap diag-iframe-wrap--uml">
+          <iframe src="assets/diagramas/diagrama_UML.html" title="Diagramas UML del Sistema" loading="lazy"></iframe>
+          <div class="diag-caption"><strong>Diagramas UML:</strong> Casos de Uso · Clases · Secuencia · Actividades — Sistema de Gestión Typica Café.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== PLANIFICACIÓN (GANTT) ===== -->
+  <section id="planificacion" class="section section--brown">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">09 · Planificación</p>
+        <h2 class="section__title">Cronograma de actividades 2026</h2>
+        <p class="section__desc">Diagrama de Gantt con las fases del proyecto académico.</p>
+      </div>
+
+      <div class="reveal" style="overflow-x:auto;">
+        <table class="gantt-table">
+          <thead>
+            <tr>
+              <th style="min-width:200px;">Fase / Tarea</th>
+              <th>Octubre 2026</th>
+              <th>Noviembre 2026</th>
+              <th>Diciembre 2026</th>
+              <th>Entregable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong style="color:var(--cream);">Fase 1</strong><br/><span style="font-size:0.8rem;">Generalidades y Sitio Web</span></td>
+              <td><div class="gantt-bar gantt-bar--oct" style="width:100%;"></div><span style="font-size:0.72rem;color:rgba(245,240,232,0.5);">27–29 Oct</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td><span class="deliverable-badge">Blog / Sitio Web publicado</span></td>
+            </tr>
+            <tr>
+              <td><strong style="color:var(--cream);">Fase 2</strong><br/><span style="font-size:0.8rem;">Análisis Estructurado (DFDs)</span></td>
+              <td>—</td>
+              <td><div class="gantt-bar gantt-bar--nov" style="width:70%;"></div><span style="font-size:0.72rem;color:rgba(245,240,232,0.5);">S1 – S2</span></td>
+              <td>—</td>
+              <td><span class="deliverable-badge">Diagramas DFD y Diccionario</span></td>
+            </tr>
+            <tr>
+              <td><strong style="color:var(--cream);">Fase 3</strong><br/><span style="font-size:0.8rem;">Análisis Orientado a Objetos</span></td>
+              <td>—</td>
+              <td><div class="gantt-bar gantt-bar--nov" style="width:100%;"></div><span style="font-size:0.72rem;color:rgba(245,240,232,0.5);">S3 – S4</span></td>
+              <td><div class="gantt-bar gantt-bar--dec" style="width:30%;"></div><span style="font-size:0.72rem;color:rgba(245,240,232,0.5);">S1</span></td>
+              <td><span class="deliverable-badge">Diagramas UML completos</span></td>
+            </tr>
+            <tr>
+              <td><strong style="color:var(--cream);">Fase 4</strong><br/><span style="font-size:0.8rem;">Consolidación y Formato</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td><div class="gantt-bar gantt-bar--dec" style="width:55%;"></div><span style="font-size:0.72rem;color:rgba(245,240,232,0.5);">01–07 Dic</span></td>
+              <td><span class="deliverable-badge">Documento Word/PDF final</span></td>
+            </tr>
+            <tr>
+              <td><strong style="color:var(--cream);">Fase 5</strong><br/><span style="font-size:0.8rem;">Entrega y Defensa Final</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td><div class="gantt-bar gantt-bar--dec" style="width:85%;"></div><span style="font-size:0.72rem;color:rgba(245,240,232,0.5);">08–12 Dic</span></td>
+              <td><span class="deliverable-badge">Defensa del Proyecto</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== EQUIPO ===== -->
+  <section id="equipo" class="section section--dark">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">10 · Equipo</p>
+        <h2 class="section__title">Integrantes del proyecto</h2>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-card__avatar">BA</div>
+          <h3>Bryan Orlando<br/>Apaza Pacheco</h3>
+          <span>Integrante</span>
+        </div>
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-card__avatar">AA</div>
+          <h3>Alan<br/>Aquino</h3>
+          <span>Integrante</span>
+        </div>
+        <div class="team-card team-card--pending reveal reveal-delay-2">
+          <div class="team-card__avatar">+</div>
+          <h3>Integrante 3</h3>
+          <span>Por confirmar</span>
+        </div>
+        <div class="team-card team-card--pending reveal reveal-delay-3">
+          <div class="team-card__avatar">+</div>
+          <h3>Integrante 4</h3>
+          <span>Por confirmar</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="assets/images/logo_umsa.svg" alt="UMSA" />
+          <div>
+            <div class="footer__brand-name">UMSA — Carrera de Informática</div>
+            <div class="footer__brand-sub">Facultad de Ciencias Puras y Naturales</div>
+          </div>
+        </div>
+
+        <div class="footer__info">
+          <strong>Proyecto ADOO 2026</strong><br/>
+          Sistema de Gestión para Typica Café · La Paz, Bolivia<br/>
+          Materia: Análisis y Diseño de Sistemas
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
